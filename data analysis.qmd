@@ -1,0 +1,18 @@
+---
+title: "Data analysis"
+format: html
+editor: visual
+---
+
+## Data Results
+
+You can add options to executable code like this
+
+```{r}
+library(readxl)
+data <- read_excel("C:/Data science courses/STA6257/Research project/RSV Data for the US.xlsx")
+View(RSV_Data_for_the_US)
+library(tidyverse)
+ggplot(data=data,aes(x=RepWeekDate,y=PCRDetectionsNumerator))+geom_smooth()
+
+```
