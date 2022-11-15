@@ -16,3 +16,20 @@ library(tidyverse)
 ggplot(data=data,aes(x=RepWeekDate,y=PCRDetectionsNumerator))+geom_smooth()
 
 ```
+
+```{r}
+data %>%
+  mutate(x=Week,y=PCRDetectionsNumerator)
+model1<-lm(PCRDetectionsNumerator~Week,data=data)
+summary(model1)
+model2<-lm(PCRDetectionsNumerator~Week+I(Week^2),data=data)
+summary(model2)
+model3<-lm(PCRDetectionsNumerator~Week+I(Week^2)+I(Week^3),data=data)
+summary(model3)
+model4<-lm(PCRDetectionsNumerator~Week+I(Week^2)+I(Week^3)+I(Week^4),data=data)
+summary(model4)
+model5<-lm(PCRDetectionsNumerator~Week+I(Week^2)+I(Week^3)+I(Week^4)+I(Week^5),data=data)
+summary(model5)
+model6<-lm(PCRDetectionsNumerator~Week+I(Week^2)+I(Week^3)+I(Week^4)+I(Week^5)+I(Week^6),data=data)
+summary(model6)
+```
